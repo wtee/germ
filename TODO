@@ -1,0 +1,24 @@
+I'm not planning on adding any major new features (aside from 
+allowing for plugins) before making it to stable release.
+I think it's functional enough as is.
+
+That said, below is a list of things that may (or just 
+as likely may not) go into the next developmental version.
+
+To Do:
+Give code a good thorough auditing to make sure it is stable 
+enough for a stable release.
+
+Add plugin support to allow for extending germ's functionality
+without burdening the main core with excessive features.
+
+(Not Likely) To Do:
+Text::Wrap all input so that posts with overly long lines 
+don't run off the edge of old browsers (and because long 
+lines get annoying to read).
+
+Make tag tracking/searching more efficient.  
+
+Allow for the creation of a static phlog.
+
+Add full-text search functionality.

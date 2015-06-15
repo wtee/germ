@@ -1,0 +1,64 @@
+Changes:
+
+germ-0.4.0 (it's about time release)
+
+At long last, germ has become multi-plaform. With the
+addition of a few lines of code and some refinements
+germ should now work with any gopher server that passes
+arguments directly to cgi scripts (a la Bucktooth) AND
+any server that uses traditional CGI environmental variables,
+specifically QUERY_STRING,to communicate with scripts 
+(a la Gophernicus and Motsognir). It still not likely
+to work with any server that doesn't communicate with
+its scripts through one of the above methods.
+
+what's changed:
+-germ can recognize and use QUERY_STRING for servers
+ that provide it. It defaults to @ARGV otherwise.
+-comment limit is now 950 characters.
+
+what's been fixed:
+-tag search spat out some protests about uninitialized
+ variables. Now it doesn't.
+-vistors can no longer comment on non-existent posts.
+-comment text and leave a comment text now wrap at 65
+ columns, which should actually work for 80 column displays.
+ In the context of a gopher menu, 70 column lines were often
+ still too long.
+-minor security improvements.
+
+germ-0.3.1 (quick fix release)
+
+what's been fixed:
+-comment text and leave a comment text now wrap at 70 columns.  
+-dates are now printed with each comment.  Version 0.3 broke this.
+
+germ-0.3 (Back to school release)
+
+I've incorporated many of the features and a good portion of code from 
+slugmax@sdf.org's version of germ (germ 0.2), so in deference this release is 
+germ 0.3.
+
+what's been added:
+-ability to include links within gopherlog posts (in 0.2)
+-ability to shorten posts (in 0.2)
+-ability to include tags, with spaces if so desired (in 0.2, partially)
+-a comment counter
+
+what's been fixed:
+-put Configurable Variables in a more logical order, with the one variable
+ that must be changed at the top, followed by customization variables,
+ then more technical variables (that SDF users don't need to change) 
+ toward the bottom of the list.
+-added comments 
+-cut out a lot of excess lines of code.  With all the added features and 
+ comments germ-0.3 is only 22 lines longer than germ 0.1.
+ 
+ what's been broken:
+ -I chose, for this release at least, not to implement germ 0.2's ability to
+  change the post extension.  
+ 
+ The new features are documented in the file USAGE, portions of which were
+ also authored by slugmax@sdf.org, the example post (again partially authored
+ by slugmax@sdf.org) has been altered to demonstrate germ's new features.
+

@@ -1,0 +1,78 @@
+Installation:
+
+Quick:
+tar zxf germ-0.4.tgz
+
+Move germ.cgi and the dat directory to the directory you want them in.
+
+chmod 750 germ.cgi
+chmod 770 dat
+chmod 640 dat/*
+
+Make sure the  script's and dat directory group owner is set to whatever your 
+server uses to run cgi scripts.  This is often "nobody".  
+
+Edit germ.cgi to make sure perl is pointed at the right spot.  It's currently
+set up for use at sdf.lonestar.org, which has an unusual location for it's perl
+executable.  Edit the "Configurable Variables" following the instructions 
+alongside them.
+
+Link to the germ.cgi using item type 1, so that it gets treated as a directory.
+
+*****
+
+(Overly) Long Version:
+Move or copy germ.cgi and and the dat directory to the directory you want your
+phlog to be in.
+
+Make sure germ.cgi is executable.  "chmod 750 germ.cgi" should do the trick.  
+You also need to make sure the program can write to the dat directory, so it can
+write comments.  "chmod 770 dat" should take care of that.  To be safe, 
+"chmod 640 dat/*" should make sure your header, divider and post files are all
+readable.
+
+If you'd like, you can change the program's name to something like "phlog.cgi" 
+or "glog.cgi". Depending on your server's set up the ".cgi" may or may not be 
+required.  If you don't know, you should probably just leave it on.  If you 
+want to change the the program's type something like "mv germ.cgi phlog.cgi", 
+replacing "phlog.cgi"with the name you wish to use.
+
+Make sure the  script's and dat directory group owner is set to whatever your 
+server uses to run cgi scripts.  This is often "nobody".  A simple 
+"chown :nobody germ.cgi dat" should do the trick.  If you're on sdf, unpacking
+everything into your gopher directory should do it.  If you unpack it in your
+home directory and move it to your gopher directory it may have the wrong 
+group id.  
+
+Now it's time to do some light editing of germ.cgi.  If you're not running
+germ on sdf.lonestar.org, you'll need to change the very first line of the 
+the program; this will probably work: "#!/usr/bin/perl".
+
+If you've changed the program's name let it know by changing the $name variable 
+to match.  
+
+Again if you're not on running this at the Super Dimensional Fortress, you'll 
+need to change $server to match your server's internet address.
+
+You probably don't need to change $port, unless you know your server is using a 
+different port.  If you don't know what that means, leave it be.
+
+Next you'll need to edit $base_dir to correspond to path your server will send
+to clients.  If you're on sdf, just replace YOUR_USER_NAME with (you guessed it)
+your username.  On other servers, this will likely be different.
+
+Then you can edit $dir to make sure it is a full path to the directory in which
+you store your posts and your header.txt and div.txt files.  If you're on sdf,
+you shouldn't need to edit this.  
+
+Finally, you can edit $max_posts do decide how many posts germ will display per
+directory.  
+
+Once you're done getting germ set up, just link to it as if it were a directory,
+item type 1.
+
+In a gophermap file that would look something like this:
+
+1Phlog  /users/username/germ.cgi
+
+Once it's up and running, consult USAGE to start writing posts.

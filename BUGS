@@ -1,0 +1,12 @@
+Bugs:
+
+Due to the primative menu paging in the
+UMN gopher client, long posts in germ will not
+properly display. There's no obvious way to 
+fix this that doesn't involve altering the client
+itself or scattering frequent links throughout
+longer posts.
+
+A pound sign (#) in comments convert the three
+characters that follow it into an octal number,
+which is then interpreted as a character code.
