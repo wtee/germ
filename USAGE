@@ -1,0 +1,96 @@
+Basic:
+
+    Once you've got germ pointed at the right directory, it knows it's own
+    name and you've changed the dat directory's permissions to 770 things
+    are pretty simple.
+    
+    To write a post, create a file in your favorite text editor.  The
+    first line should be the entry's title, unless you are using tags,
+    then defer it to the second line and see below.  Next hit
+    return twice to leave a gap between your title and your entry and then
+    type away.  Limit your lines to 65 columns.  This way terminal
+    based clients like lynx and gopher can view your gopherlog.
+    Links can be over 70 columns. 
+    
+    One tip to help you when posting indented text or source code, be sure
+    to convert any tabs your text may contain into spaces. Lines starting
+    with <TAB> characters don't get displayed as inline text by the
+    gopher server.
+    
+To use tags:
+    
+    
+    The first line can be a list of comma-separated tags, which get
+    parsed and converted to a link that when clicked, will display all
+    posts containing that tag. The format looks like this:
+    
+    #Tags Linux,Sysadmin,Tips
+    
+    this will also work:
+    
+    #tags Sysadmin, Tips and Tricks,linux
+    
+    The space after the '#Tags' and before the list of tags is mandatory.
+    Tags are not case-sensitive, so "Linux" and "linux" link to the same tag.
+    Spaces around the commas get stripped. Spaces within tags are allowed, 
+    but punctuation is not.
+    
+    Tags are also currently allowed in the second line of the post to 
+    maintain compatability with germ 2.0's tag system.  Placing tags on the
+    second line is deprecated and may not be supported in future releases.
+    Whether you place the tag on the first or second line will not affect 
+    the appearance of your gopherlog.  Tags on any other lines will be 
+    treated as normal text.
+    
+To shorten posts:
+    
+    You can also shorten your post, by adding this text on a line by
+    itself somewhere in your post:
+
+    --more--
+    
+    On the index, archive, and tag pages, anything after this line is not
+    displayed. This will cut down on the size of the main index page once
+    you fill it with a lot of posts.
+    
+To use links:
+
+    Germ will do its best to detect lines with gophermap-style links, and
+    display them as-is (rather than as inline-text). The server and port
+    are required. Here is an example:
+    
+    0germ.cgi<TAB>/users/slugmax/code/germ-0.2.cgi<TAB>sdf.lonestar.org<TAB>70
+    9germ-0.2.tgz<TAB>/users/slugmax/code/germ-0.2.tgz<TAB>sdf.lonestar.org<TAB>70
+
+    Where "<TAB>" is the tab character, not spaces.  It doesn't work with 
+    spaces.
+
+To save and publish your post:
+
+    When you're done, save your entry in your dat directory with a format
+    like this FILENAME.post.  If it doesn't end in ".post", germ ignores
+    it and your post languishes.  Make sure it's readable.  A quick "chmod
+    644 FILENAME.post" can do that for you (You can change this extension
+    - see the INSTALL document for an explanation, or just change the
+    $post_ext variable).
+    
+    After that, you're done.  Germ handles the dating, displaying, and
+    archiving of your posts.  It also handles the creation, maitanence,
+    and dating of your comment files, stored in "FILENAME.post.cmt".
+
+To customize:
+
+    To customize your header or divider, simply edit the header.txt or
+    div.txt file in your dat directory.
+    
+    You can also customize the text that goes in the link to your individual
+    posts and the text displayed when you shorten a post by editing the 
+    variables $permalink_text and $more_text respectively which are in 
+    Configurable Variables in the script's header.  These texts are generated 
+    dynamically so it will change for all posts, old and new.  
+    
+    You can also customize the divider between comments, and the divider 
+    between posts and tags by editing the variable $cmt_div.  Once you 
+    have recieved comments, changing this is inadvisable, as it will
+    ruin comment counts.
+

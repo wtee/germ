@@ -1,0 +1,18 @@
+#Tags First Post,Phlog
+My First Gopherlog Entry
+
+Hello there.  This is my first entry in my new gopherlog.
+I'm using germ 0.4 to show you this.
+
+Use the below line to stop display of the rest of the post on 
+index and archive pages.
+
+--more--
+I'll probably delete this post because it's silly and not 
+actually written by me.
+
+Example embedded links:
+
+0germ.cgi	/users/wt/soft/my/germ/germ-0.4.cgi	sdf.lonestar.org	70
+9germ-0.4.tgz	/users/wt/soft/my/germ/germ-0.4.tgz	sdf.lonestar.org	70
+

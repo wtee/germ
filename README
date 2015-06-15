@@ -1,0 +1,37 @@
+germ-0.3 alpha release
+(c) 2009-2011, Wesley Teal, wt@sdf.lonestar.org
+
+"Let your ideas germinate."
+
+    germ
+    n 1: anything that provides inspiration for later work 
+    [syn: {source}, {seed}, {germ}]
+    2: a small apparently simple structure (as a fertilized egg)
+    from which new tissue can develop into a complete organism
+    3: a dynamic gopherlog script meant to combine useful features
+    with ease of use and small codebase 
+
+Germ (as in the germ of a seed or an idea) is a dynamic glogging/phlogging 
+script written in perl.  It has the capability to display posts individually 
+and together on a page with a customizable header and a customizable divider 
+between posts.  It also archives older posts and can accept comments on 
+individual posts.  Germ owes its inspiration to the perl weblog engine 
+"blosxom" originally authored by Rael Dornfest.
+
+This is an beta release.  While germ seems to be fairly stable, it still needs 
+testing and refinement.  Nothing is guarnteed to work and if it does, it's 
+still not guarunteed to work properly.  If you find any bugs or want any 
+particular features, please email me at the address listed above.
+
+Germ has been tested and works with the Bucktooth gopher server (buckd) 
+and with the Gophernicus gopher server, it seems to work fine with both.
+It has not been currently tested with other servers, but should 
+hypothetically work with any server that passes QUERY_STRING or ARGV to
+their executable scripts.
+
+To install, see: INSTALL
+To use germ, see: USAGE
+To see the (re)distribution terms, see: LICENSE
+To see what's changed from germ 0.1 to germ 0.4, see: CHANGES
+To find out roughly what's coming in germ's future, see: TODO
+To see known issues, see: BUGS
